@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/deleterepo/devise-encryptable
+  revision: 0bc8ea7db9fe08f7c81a7e83424f6dff2a587ba6
+  specs:
+    devise-encryptable (0.2.0)
+      devise (>= 2.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -143,6 +150,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.6-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -243,6 +252,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -251,6 +261,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-encryptable!
   importmap-rails
   jbuilder
   puma (~> 5.0)
