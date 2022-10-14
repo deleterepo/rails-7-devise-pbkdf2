@@ -1,5 +1,6 @@
 <div class="d-flex flex-column justify-content-center align-items-center pt-5">
     <h1 class="">Welcome</h1>
+    <h4>Logged in as <%= current_user.email %></h4>
     <h3>Rails 7 skeleton app with Devise and Bootstrap</h3>
     <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary rounded-pill" %>
 </div>
