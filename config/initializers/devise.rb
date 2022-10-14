@@ -123,9 +123,12 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 12
+  
+  # Set stretches to 120,000 since we're using PBKDF2 with SHA-512 - https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2
+  config.stretches = Rails.env.test? ? 1 : 120000
 
   # Set up a pepper to generate the hashed password.
+  # TODO: Configure pepper externally and set here
   # config.pepper = '51a6c9320b3aeed9b9d4f275482dfd922b9afb29982bcd9074eab5dd284bb69035c40672fe65b01ef6021b85440765ed3495299276190d8c740157c23a434604'
 
   # Send a notification to the original email when the user's email is changed.
@@ -308,4 +311,6 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 end
